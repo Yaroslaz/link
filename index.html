@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#101114">
+<meta name="description" content="Небольшая страница для подключения привязанного устройства к компьютеру.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Подключение">
+<title>Подключение</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<style id="link-base">
+html, body { margin: 0; min-height: 100%; background: #101114; color: #f2f2f4; }
+body { font: 17px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+noscript { display: block; padding: 32px 20px; font-size: 18px; }
+</style>
+<style id="link-overlay-style">
+#link-overlay { position: fixed; inset: 0; z-index: 2147483000; display: grid; place-items: center; padding: max(20px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom)); background: #101114; color: #f2f2f4; font: 17px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; overflow-y: auto; box-sizing: border-box; }
+#link-overlay[hidden] { display: none; }
+#link-overlay * { box-sizing: border-box; }
+#link-overlay.lk-banner-mode { inset: auto 0 0 0; background: none; padding: 0 16px max(16px, env(safe-area-inset-bottom)); pointer-events: none; }
+#link-overlay .lk-card { width: 100%; max-width: 440px; display: grid; gap: 14px; }
+#link-overlay h1 { margin: 0 0 4px; font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.01em; }
+#link-overlay p { margin: 0; color: #b4b6be; font-size: 18px; }
+#link-overlay .lk-error { color: #ff9b8f; }
+#link-overlay .lk-label { margin-top: 10px; font-size: 15px; color: #8d909a; }
+#link-overlay .lk-input { width: 100%; padding: 16px 18px; border: 0; border-radius: 16px; background: #1d1f25; color: inherit; font: 600 19px/1.3 ui-monospace, "SF Mono", Consolas, monospace; letter-spacing: 0.04em; text-transform: uppercase; }
+#link-overlay .lk-input::placeholder { color: #5d606b; }
+#link-overlay .lk-input:focus { outline: none; box-shadow: 0 0 0 3px #6e8bff66; }
+#link-overlay .lk-btn { width: 100%; padding: 16px 18px; border: 0; border-radius: 16px; font: 600 18px/1.2 inherit; font-family: inherit; cursor: pointer; }
+#link-overlay .lk-btn:focus-visible { outline: none; box-shadow: 0 0 0 3px #6e8bff88; }
+#link-overlay .lk-primary { background: #6e8bff; color: #0c0d10; margin-top: 6px; }
+#link-overlay .lk-primary:active { background: #8aa1ff; }
+#link-overlay .lk-quiet { background: transparent; color: #8d909a; padding: 10px; }
+#link-overlay .lk-check { font: 700 64px/1 ui-monospace, "SF Mono", Consolas, monospace; letter-spacing: 0.18em; padding: 22px 0 10px; }
+#link-overlay .lk-spin { width: 34px; height: 34px; border-radius: 50%; border: 3px solid #2a2d35; border-top-color: #6e8bff; animation: lk-spin 0.9s linear infinite; }
+#link-overlay .lk-banner { margin: 0 auto; max-width: 440px; display: flex; gap: 10px; align-items: center; padding: 14px 18px; border-radius: 16px; background: #1d1f25ee; color: #f2f2f4; font-size: 16px; box-shadow: 0 10px 30px #0008; }
+#link-overlay .lk-dot { width: 10px; height: 10px; border-radius: 50%; background: #f5b54a; flex: none; animation: lk-pulse 1.2s ease-in-out infinite; }
+@keyframes lk-spin { to { transform: rotate(360deg); } }
+@keyframes lk-pulse { 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) { #link-overlay .lk-spin, #link-overlay .lk-dot { animation: none; } }
+</style>
+</head>
+<body>
+<div id="link-overlay" hidden></div>
+<noscript>Для подключения нужен JavaScript.</noscript>
+<script src="app.js" defer></script>
+</body>
+</html>
